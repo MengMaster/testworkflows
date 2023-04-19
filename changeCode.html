@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            padding: 10px;
+        }
+
+        #code {
+            padding: 5px;
+            height: 30px;
+            width: 200px;
+            line-height: 30px;
+            float: left;
+            margin-left: 50px;
+        }
+
+        #end {
+            padding: 5px;
+            float: left;
+            height: 30px;
+            width: 200px;
+            line-height: 30px;
+            margin-left: 50px;
+            border: 2px solid #0b90b0;
+        }
+    </style>
+    <div id="box">
+        <h1 style="text-align: center;margin:50px 0">将数据库中的字段转为驼峰形式</h1>
+        <input id="code" type="text" onchange="changeCode()" placeholder="请输入用户名"/>
+        <div id="end"></div>
+    </div>
+
+</head>
+<body>
+<script>
+  const num = '10,10,12.3,sdfsf234,10.1.1'
+  const checkNum = true
+  num.split(',').forEach(res => {
+    console.log(res)
+    console.log(!isNaN(res))
+    // console.log(typeof parseFloat(res) === 'number')
+    if (typeof res === 'number' && !isNaN(res)) {
+      this.checkNum = false
+    }
+  })
+  console.log(checkNum)
+
+  function changeCode() {
+    const code = document.getElementById('code').value
+    // console.log(code)
+    const change = code.split('_')
+    const outCode = ''
+    for (let i = 0; i < change.length; i++) {
+      if (i === 0) {
+        this.outCode = change[i]
+      } else {
+        const upper = change[i].substring(0, 1).toUpperCase() + change[i].substring(1)
+        this.outCode += upper
+      }
+    }
+    const endCode = document.getElementById('end')
+    endCode.innerHTML = this.outCode
+
+  }
+
+</script>
+</body>
+</html>
