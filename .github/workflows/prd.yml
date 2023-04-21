@@ -12,7 +12,9 @@ jobs:
           node-version: '14'
       - run: npm install -g bats
       - run: bats -v
-      - run: REPO_NAME=$(echo ${{ github.repository }})
+      - run: |
+          REPO_NAME=msy
+          echo "REPO_NAME=$REPO_NAME" >> $GITHUB_ENV
       - run: echo "github：${{ github.ref }}"
       - run: echo "env输出：${{ env.REPO_NAME }}"
       - run: echo "输出secrets：${{ secrets.TEST_PASSWORD }}"
