@@ -3,6 +3,8 @@ on: [push]
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
+    environment: 
+      name: production
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -14,5 +16,5 @@ jobs:
 #       - run: echo "env：${{ env. }}"
       - run: echo "输出secrets：${{ secrets.TEST_PASSWORD }}"
 #         if:  ${{secrets.TEST_PASSWORD}} == '123'
-#       - run: echo "123123：${{ github.ref }}"
+      - run: echo "123123：${{ vars.TEST_VAR }}"
      
