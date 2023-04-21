@@ -13,6 +13,6 @@ jobs:
       - run: echo "github：${{ github.ref }}"
 #       - run: echo "env：${{ env. }}"
       - run: echo "输出secrets：${{ secrets.TEST_PASSWORD }}"
-        if:  ${{secrets.TEST_PASSWORD}} == '123'
-      - run: echo "123123：${{ github.ref }}"
+#         if:  ${{secrets.TEST_PASSWORD}} == '123'
+#       - run: echo "123123：${{ github.ref }}"
      
