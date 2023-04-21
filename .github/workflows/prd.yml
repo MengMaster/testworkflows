@@ -12,10 +12,11 @@ jobs:
           node-version: '14'
       - run: npm install -g bats
       - run: bats -v
+      - run: REPO_NAME=$(echo ${{ github.repository }})
       - run: echo "github：${{ github.ref }}"
-      - run: echo "env：${{ env.REPO_NAME }}"
+      - run: echo "env输出：${{ env.REPO_NAME }}"
       - run: echo "输出secrets：${{ secrets.TEST_PASSWORD }}"
-      - run: echo "输出envTEST_USERNAME：：：$GITHUB_REF"
+#       - run: echo "输出envTEST_USERNAME：：：$GITHUB_REF"
 #         if:  ${{secrets.TEST_PASSWORD}} == '123'
       - run: echo "vars：${{ vars.TEST_VAR }}"
      
