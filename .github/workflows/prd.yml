@@ -12,5 +12,7 @@ jobs:
       - run: bats -v
       - run: echo "github：${{ github.ref }}"
 #       - run: echo "env：${{ env. }}"
-      - run: echo "输出secrets：${{ env.TEST_USERNAME }}"
+      - run: echo "输出secrets：${{ secrets.TEST_PASSWORD }}"
+        if:  secrets.TEST_PASSWORD == '123'
+      - run: echo "123123：${{ github.ref }}"
      
