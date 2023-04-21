@@ -10,5 +10,5 @@ jobs:
           node-version: '14'
       - run: npm install -g bats
       - run: bats -v
-      - run: echo "输出secrets：${{ secrets.TEST_USERNAME }}"
-      - run: echo "输出var：${{ secrets.TEST_VAR }}"
+      - run: echo "输出secrets：${{ env.TEST_USERNAME }}"
+      - run: echo "输出var：${{ env.TEST_VAR }}"
