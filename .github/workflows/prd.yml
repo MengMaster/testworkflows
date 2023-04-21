@@ -15,11 +15,11 @@ jobs:
       - run: |
           REPO_NAME=msy
           echo "REPO_NAME=$REPO_NAME" >> $GITHUB_ENV
-      - run: echo "github：${{ github.ref }}"
-      - run: echo "env输出：${{ env.REPO_NAME }}"
-      - run: echo "输出secrets：${{ secrets.TEST_PASSWORD }}"
+          echo "github：${{ github.ref }}"
+          echo "env输出：${{ env.REPO_NAME }}"
+          echo "输出secrets：${{ secrets.TEST_PASSWORD }}"
+          echo "vars：${{ vars.TEST_VAR }}"
 #       - run: echo "输出envTEST_USERNAME：：：$GITHUB_REF"
 #         if:  ${{secrets.TEST_PASSWORD}} == '123'
-      - run: echo "vars：${{ vars.TEST_VAR }}"
      
      
