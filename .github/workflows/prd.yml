@@ -15,6 +15,7 @@ jobs:
       - run: echo "github：${{ github.ref }}"
       - run: echo "env：${{ env.REPO_NAME }}"
       - run: echo "输出secrets：${{ secrets.TEST_PASSWORD }}"
+      - run: echo "输出envTEST_USERNAME：${{ env.TEST_USERNAME }}"
 #         if:  ${{secrets.TEST_PASSWORD}} == '123'
       - run: echo "vars：${{ vars.TEST_VAR }}"
      
