@@ -10,7 +10,7 @@ jobs:
           node-version: '14'
       - run: npm install -g bats
       - run: bats -v
-      - run: echo "github：${{ github. }}"
-      - run: echo "env：${{ env. }}"
+      - run: echo "github：${{ github.ref }}"
+#       - run: echo "env：${{ env. }}"
       - run: echo "输出secrets：${{ env.TEST_USERNAME }}"
      
