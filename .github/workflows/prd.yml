@@ -11,4 +11,4 @@ jobs:
       - run: npm install -g bats
       - run: bats -v
       - run: echo "输出secrets：${{ env.TEST_USERNAME }}"
-      - run: echo "输出var：${{ env.TEST_VAR }}"
+      - run: echo "输出var：${{ var.TEST_VAR }}"
